@@ -111,16 +111,33 @@
 					<ul>
 						<li class="fragment" data-fragment-index="1">Les sagas et leurs métadonnées (auteur, genre, synopsis, etc.)</li>
 						<small class="fragment" data-fragment-index="5">↪ Liste des sagas Netophonix</small>
-						<li class="fragment" data-fragment-index="2">Les saisons et épisodes</li>
+						<li class="fragment" data-fragment-index="2">Les saisons, épisodes et images</li>
 						<small class="fragment" data-fragment-index="6">↪ Archive de Clator</small>
 						<li class="fragment" data-fragment-index="3">Les actualités (nouvelles sagas, nouveaux épisodes, castings, etc.)</li>
 						<small class="fragment" data-fragment-index="7">↪ Flux RSS du forum Netophonix</small>
 						<li class="fragment" data-fragment-index="4">Les favoris</li>
 						<small class="fragment" data-fragment-index="8">↪ Propres à l'application</small>
 					</ul>
+					<aside class="notes">
+						<p>Les sagas et leurs métadonnées : distribution des rôles, site web du projet...</p>
+					</aside>
 				</section>
 				<section data-background-opacity="0.5">
-					<img src="images/schemas/donnees-de-lapplication.drawio.png" />
+					<img src="images/schemas/sources-donnees.drawio.png" />
+				</section>
+				<section data-background-opacity="0.5">
+					<h2>Vers la centralisation des données</h2>
+					<ul>
+						<li class="fragment">Données des sources externes complexes à isoler</li>
+						<li class="fragment">Peu de mises à jour sur les sources externes (1 fois par jour maximum)</li>
+						<li class="fragment">Dépendance à un service externe</li>
+					</ul>
+					<aside class="notes">
+						<p>Scraping HTML du tableau des sagas et lecture des PDFs de l'archive complexe</p>
+					</aside>
+				</section>
+				<section data-background-opacity="0.5">
+					<img src="images/schemas/centralisation-donnees.drawio.png" />
 				</section>
 			</section>
 		</div>
