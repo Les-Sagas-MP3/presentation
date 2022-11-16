@@ -40,7 +40,7 @@
 					<audio preload controls
 						src="http://localhost:8000/audio/extrait-donjon-de-naheulbeuk.mp3">
 					</audio>
-					<p class="fragment"><img src="http://localhost:8000/images/naheulbeuk.jpg" height="400px"/></p>
+					<p class="fragment"><img src="http://localhost:8000/images/sagas/naheulbeuk.jpg" height="400px"/></p>
 					<aside class="notes">
 						<p>Le Donjon de Naheulbeuk, une saga audio créée en 2001 par John Lang, diffusée gratuitement sur internet.</p>
 						<p>2 saisons audio et plusieurs bonus, des livres, des jeux, un groupe de musique...</p>
@@ -50,7 +50,7 @@
 					<audio preload controls
 						src="http://localhost:8000/audio/extrait-eden.mp3">
 					</audio>
-					<p class="fragment"><img src="http://localhost:8000/images/eden.jpg" height="400px"/></p>
+					<p class="fragment"><img src="http://localhost:8000/images/sagas/eden.jpg" height="400px"/></p>
 					<aside class="notes">
 						<p>Créée entre 2006 et 2009 par Antoine Rouaud, Eden est un genre de space opéra audio</p>
 						<p>3 saisons et une suite : Eden Sacrifice</p>
@@ -60,7 +60,7 @@
 					<audio preload controls
 						src="http://localhost:8000/audio/extrait-bat-man.mp3">
 					</audio>
-					<p class="fragment"><img src="http://localhost:8000/images/bat-man.jpg" height="400px"/></p>
+					<p class="fragment"><img src="http://localhost:8000/images/sagas/bat-man.jpg" height="400px"/></p>
 					<aside class="notes">
 						<p>Créée entre 2019 par Johnny, Ranne Madsen</p>
 					</aside>
@@ -71,7 +71,7 @@
 					<h2>Le point commun entre ces sagas ?</h2>
 				</section>
 				<section>
-					<img src="http://localhost:8000/images/netophonix.jpg"/>
+					<img src="http://localhost:8000/images/netophonix/logo.jpg"/>
 					<aside class="notes">
 						<p>Communauté de créateurs et de passionnés</p>
 						<p>Depuis 2000</p>
@@ -79,10 +79,10 @@
 					</aside>
 				</section>
 				<section>
-					<img src="http://localhost:8000/images/netophonix-liste.png"/>
+					<img src="http://localhost:8000/images/netophonix/liste.png"/>
 				</section>
 				<section>
-					<img src="http://localhost:8000/images/netophonix-liste-mobile.png" height="600px"/>
+					<img src="http://localhost:8000/images/netophonix/liste-mobile.png" height="600px"/>
 					<aside class="notes">
 						<p>Web des années 2000</p>
 						<ul>
@@ -104,13 +104,23 @@
 			</section>
 			<section>
 				<section>
-					<h2>Un backend avec exposition d'API</h2>
+					<h2>Les données de l'application</h2>
 				</section>
 				<section>
-					<h3>Java avec Spring Boot</h3>
-					<aside class="notes">
-						<p>Web des années 2000</p>
-					</aside>
+					<h3>Typologies et sources de données</h3>
+					<ul>
+						<li class="fragment" data-fragment-index="1">Les sagas et leurs métadonnées (auteur, genre, synopsis, etc.)</li>
+						<small class="fragment" data-fragment-index="5">↪ Liste des sagas Netophonix</small>
+						<li class="fragment" data-fragment-index="2">Les saisons et épisodes</li>
+						<small class="fragment" data-fragment-index="6">↪ Archive de Clator</small>
+						<li class="fragment" data-fragment-index="3">Les actualités (nouvelles sagas, nouveaux épisodes, castings, etc.)</li>
+						<small class="fragment" data-fragment-index="7">↪ Flux RSS du forum Netophonix</small>
+						<li class="fragment" data-fragment-index="4">Les favoris</li>
+						<small class="fragment" data-fragment-index="8">↪ Propres à l'application</small>
+					</ul>
+				</section>
+				<section data-background-opacity="0.5">
+					<img src="http://localhost:8000/images/schemas/donnees-de-lapplication.drawio.png" />
 				</section>
 			</section>
 		</div>
