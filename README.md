@@ -12,10 +12,6 @@ npm install
 npm start
 ```
 
-# Ouvrir la vue speaker
+# Open the speaker view
 
-Entrer `S` sur n'importe quelle slide
-
-# Temps passé
-
-4h
+Enter  `S` on any slide
