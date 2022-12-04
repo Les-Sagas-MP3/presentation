@@ -37,30 +37,28 @@
 					<h2>Connaissez-vous... ?</h2>
 				</section>
 				<section>
-					<audio preload controls
-						src="audio/extrait-donjon-de-naheulbeuk.mp3">
+					<audio preload controls src="audio/extrait-donjon-de-naheulbeuk.mp3">
 					</audio>
-					<p class="fragment"><img src="images/sagas/naheulbeuk.jpg" height="400px"/></p>
+					<p class="fragment"><img src="images/sagas/naheulbeuk.jpg" height="400px" /></p>
 					<aside class="notes">
-						<p>Le Donjon de Naheulbeuk, une saga audio créée en 2001 par John Lang, diffusée gratuitement sur internet.</p>
+						<p>Le Donjon de Naheulbeuk, une saga audio créée en 2001 par John Lang, diffusée gratuitement
+							sur internet.</p>
 						<p>2 saisons audio et plusieurs bonus, des livres, des jeux, un groupe de musique...</p>
 					</aside>
 				</section>
 				<section>
-					<audio preload controls
-						src="audio/extrait-eden.mp3">
+					<audio preload controls src="audio/extrait-eden.mp3">
 					</audio>
-					<p class="fragment"><img src="images/sagas/eden.jpg" height="400px"/></p>
+					<p class="fragment"><img src="images/sagas/eden.jpg" height="400px" /></p>
 					<aside class="notes">
 						<p>Créée entre 2006 et 2009 par Antoine Rouaud, Eden est un genre de space opéra audio</p>
-						<p>3 saisons et une suite : Eden Sacrifice</p>
+						<p>3 saisons et une suite entre 2012 et 2013 : Eden Sacrifice</p>
 					</aside>
 				</section>
 				<section>
-					<audio preload controls
-						src="audio/extrait-bat-man.mp3">
+					<audio preload controls src="audio/extrait-bat-man.mp3">
 					</audio>
-					<p class="fragment"><img src="images/sagas/bat-man.jpg" height="400px"/></p>
+					<p class="fragment"><img src="images/sagas/bat-man.jpg" height="400px" /></p>
 					<aside class="notes">
 						<p>Créée entre 2019 par Johnny, Ranne Madsen</p>
 					</aside>
@@ -71,7 +69,7 @@
 					<h2>Le point commun entre ces sagas ?</h2>
 				</section>
 				<section>
-					<img src="images/netophonix/logo.jpg"/>
+					<img src="images/netophonix/logo.jpg" />
 					<aside class="notes">
 						<p>Communauté de créateurs et de passionnés</p>
 						<p>Depuis 2000</p>
@@ -79,10 +77,10 @@
 					</aside>
 				</section>
 				<section>
-					<img src="images/netophonix/liste.png"/>
+					<img src="images/netophonix/liste.png" />
 				</section>
 				<section>
-					<img src="images/netophonix/liste-mobile.png" height="600px"/>
+					<img src="images/netophonix/liste-mobile.png" height="600px" />
 					<aside class="notes">
 						<p>Web des années 2000</p>
 						<ul>
@@ -97,7 +95,8 @@
 					<ul>
 						<li class="fragment">Utiliser mon smartphone pour suivre mes sagas</li>
 						<li class="fragment">Accéder sur une même interface à toutes les informations des sagas</li>
-						<li class="fragment">Recevoir des notifications lorsque de nouveaux épisodes sont disponibles</li>
+						<li class="fragment">Recevoir des notifications lorsque de nouveaux épisodes sont disponibles
+						</li>
 						<li class="fragment">Pouvoir écouter et/ou télécharger les épisodes</li>
 					</ul>
 				</section>
@@ -109,11 +108,13 @@
 				<section>
 					<h3>Typologies et sources de données</h3>
 					<ul>
-						<li class="fragment" data-fragment-index="1">Les sagas et leurs métadonnées (auteur, genre, synopsis, etc.)</li>
+						<li class="fragment" data-fragment-index="1">Les sagas et leurs métadonnées (auteur, genre,
+							synopsis, etc.)</li>
 						<small class="fragment" data-fragment-index="5">↪ Liste des sagas Netophonix</small>
 						<li class="fragment" data-fragment-index="2">Les saisons, épisodes et images</li>
 						<small class="fragment" data-fragment-index="6">↪ Archive de Clator</small>
-						<li class="fragment" data-fragment-index="3">Les actualités (nouvelles sagas, nouveaux épisodes, castings, etc.)</li>
+						<li class="fragment" data-fragment-index="3">Les actualités (nouvelles sagas, nouveaux épisodes,
+							castings, etc.)</li>
 						<small class="fragment" data-fragment-index="7">↪ Flux RSS du forum Netophonix</small>
 						<li class="fragment" data-fragment-index="4">Les favoris</li>
 						<small class="fragment" data-fragment-index="8">↪ Propres à l'application</small>
@@ -126,7 +127,7 @@
 					<img src="images/schemas/sources-donnees.drawio.png" />
 				</section>
 				<section data-background-opacity="0.5">
-					<h2>Vers la centralisation des données</h2>
+					<h3>Vers la centralisation des données</h3>
 					<ul>
 						<li class="fragment">Données des sources externes complexes à isoler</li>
 						<li class="fragment">Peu de mises à jour sur les sources externes (1 fois par jour maximum)</li>
@@ -134,28 +135,168 @@
 					</ul>
 					<aside class="notes">
 						<p>Scraping HTML du tableau des sagas et lecture des PDFs de l'archive complexe</p>
+						<p>La communauté est au courant de la réutilisation de ces données (légal)</p>
 					</aside>
 				</section>
 				<section data-background-opacity="0.5">
 					<img src="images/schemas/centralisation-donnees.drawio.png" />
 				</section>
 			</section>
+			<section>
+				<section>
+					<h2>Gestion de la structure de données</h2>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Scraping du tableau Netophonix</h2>
+				</section>
+				<section data-background-opacity="0.5">
+					<img class="r-stretch" src="images/netophonix/liste.png" />
+				</section>
+				<section data-background-opacity="0.5">
+					<pre><code data-trim>
+&#60;tr class="row1"&#62; 
+  &#60;td class="gen medpad" align="center"&#62;
+    &#60;span id="808"&#62;&nbsp;16&nbsp;&#60;/span&#62;
+  &#60;/td&#62;
+  &#60;td class="genmed medpad" align="left"&#62;
+    &#60;a href="https://aghostslife.jimdofree.com" class="topictitle" target="_blank" style="float: left; display: block; padding-top: 4px; padding-left: 4px;"&#62;  A Ghost's Life &#60;/a&#62; 
+    &#60;a href="http://wiki.netophonix.com/A%20Ghost%27s%20Life" style="float: right; padding-top: 4px;"&#62;
+      &#60;img border="0" title="Plus d'infos sur le Netowiki" alt="Plus d'infos sur le Netowiki" src="./images/wikilink.gif"/&#62;
+    &#60;/a&#62;
+  &#60;/td&#62;
+  &#60;/td&#62;
+  &#60;td class="genmed medpad" align="center" valign="middle"&#62;&#60;span class="gen"&#62;Sarausa&#60;/span&#62;&#60;/td&#62;
+  &#60;td class="genmed medpad" align="center" valign="middle"&#62;&#60;span class="gensmall"&#62;Fantastique&#60;/span&#62;&#60;/td&#62;
+  &#60;td class="gennotetab" align="center" valign="top" width="15"&#62;
+    &#60;span class="gennotetab"&#62;
+      &#60;img align="top" valign="middle" border="0" alt="Niveau artistique en jaune et niveau technique en bleu." title="Niveau artistique en jaune et niveau technique en bleu" src="images/jaugeslist.php?art=171&tech=167"&#62;
+      &#60;td class="genmed medpad" align="center" valign="middle"&#62;
+        &#60;span class="gensmall"&#62;
+          &#60;a href="./saga_avis.php?saga_id=808&amp;notes_usid=808&amp;critview=1&amp;startlist=0&amp;saga_seek=&amp;orderlist=ASC&amp;modelist=titres"&#62;12 avis&#60;/a&#62;
+        &#60;/span&#62;
+      &#60;/td&#62;
+    &#60;/span&#62;
+  &#60;/td&#62;
+  &#60;td class="genmed medpad" align="center" valign="middle"&#62;
+    &#60;span class="gensmall"&#62;104&#60;/span&#62;
+  &#60;/td&#62;
+&#60;/tr&#62;
+</code></pre>
+				</section>
+				<section data-background-opacity="0.5">
+					<h3>Comment procéder ?</h3>
+					<ul>
+						<li class="fragment">Téléchargement du code HTML fourni par la page du tableau des sagas Netophonix</li>
+						<li class="fragment">Pour chaque ligne <code>&#60;tr&#62;</code> du tableau, on créé / met à jour une saga dans la BDD</li>
+						<li class="fragment">Parcours de la structure du DOM avec la bibliothèque <a href="https://htmlunit.sourceforge.io/">HtmlUnit</a></li>
+					</ul>
+					<aside class="notes">
+						<p>Scraping HTML du tableau des sagas et lecture des PDFs de l'archive complexe</p>
+						<p>La communauté est au courant de la réutilisation de ces données</p>
+					</aside>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Lecture de l'archive de Clator</h2>
+				</section>
+				<section data-background-opacity="0.5">
+					<img class="r-stretch" src="images/archive-clator/lepervier.png" />
+				</section>
+				<section data-background-opacity="0.5">
+					<h3>Comment procéder ?</h3>
+					<ul>
+						<li class="fragment">Ouverture du fichier et extraction du contenu sous forme de tableau de lignes de texte</li>
+						<li class="fragment">Récupération des données dans l'ordre d'apparition dans le PDF (ligne 1 = auteur, ligne 2 = musique, etc.)</li>
+						<li class="fragment">Inconvénient notable : si un fichier est mal formaté, les mauvaises données peuvent être importées</li>
+						<li class="fragment">Extraction des lignes de texte via la bibliothèque <a href="https://pdfbox.apache.org/">Apache PDFBox®</a></li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Scraping du flux XML</h2>
+				</section>
+				<section data-background-opacity="0.5">
+					<img class="r-stretch" src="images/netophonix/forum.png" />
+				</section>
+				<section data-background-opacity="0.5">
+					<img class="r-stretch" src="images/pictos/phpBB.png" />
+					<aside class="notes">
+						<p>Le forum Netophonix dispose du module phpBB Smartfeed exposant un flux XML</p>
+						<p>Les donnnées du flux sont paramétrables via son URL</p>
+					</aside>
+				</section>
+				<section data-background-opacity="0.5">
+					<h3>Comment procéder ?</h3>
+					<ul>
+						<li class="fragment">Le forum Netophonix dispose du module phpBB Smartfeed exposant un flux XML</li>
+						<li class="fragment">Les donnnées du flux sont paramétrables via son URL</li>
+						<li class="fragment">Par exemple : https://forum.netophonix.com:443/smartfeed.php?forum=1&firstpostonly=1&limit=NO_LIMIT&sort_by=postdate_desc&feed_type=RSS2.0&feed_style=HTMLSAFE</li>
+					</ul>
+				</section>
+				<section data-background-opacity="0.5">
+					<pre><code data-trim>
+&#60;item&#62;
+  &#60;title&#62;Nouveautés :: Network Evil 6 - Arc Chris &amp; Pims - Chapitre IV :: Auteur Kwaam&#60;/title&#62;
+  &#60;link&#62;https://forum.netophonix.com:443/viewtopic.php?f=1&amp;t=18929&amp;p=228153#p228153&#60;/link&#62;
+  &#60;description&#62;&#60;![CDATA[Bonjour à tous !Bonjour à tous !On est à l’avant dernier chapitre du périple de Chris & Pims ! Accrochez vous bien parce que ce chapitre vous réserve bien des surprises avec la course poursuite d’Abba qui n’en finit plus. Et que dire pour le prochain et dernier chapitre… Soyez prêt ! Bonne écoute !Après leur rencontre avec Abba, Chris & Pims l&#39;ont poursuivie jusqu&#39;à atteindre un porte avion qui serait sa base d&#39;opération.Spotify : https://open.spotify.com/show/1I6CHnQoMTfAYvWeDUCMdeDeezer : https://deezer.com/show/3889637Apple Podcasts : https://podcasts.apple.com/us/podcast/n ... 1635379871Youtube : https://www.youtube.com/playlist?list=P ... WkO_tRtB28Podcloud : https://podcloud.fr/podcast/network-evil-6Google Podcasts : https://podcasts.google.com/feed/aHR0cH ... Nhc3QvbmU2Page de la série : https://www.wavesavengers.fr/creations- ... /episodes/Flux RSS de l’émission : https://www.wavesavengers.fr/feed/podcast/ne6DISTRIBUTION : https://www.wavesavengers.fr/creations- ... tribution/]]&#62;&#60;/description&#62;
+  &#60;author&#62;no_email@example.com (Kwaam)&#60;/author&#62;
+  &#60;category&#62;Nouveautés&#60;/category&#62;
+  &#60;comments&#62;https://forum.netophonix.com:443/posting.php?mode=reply&amp;f=1&amp;t=18929&#60;/comments&#62;
+  &#60;pubDate&#62;Wed, 09 Nov 2022 23:43:58 GMT&#60;/pubDate&#62;
+  &#60;guid isPermaLink="false"&#62;https://forum.netophonix.com:443/viewtopic.php?f=1&amp;t=18929&amp;p=228153#p228153&#60;/guid&#62;
+&#60;/item&#62;
+</code></pre>
+				</section>
+				<section data-background-opacity="0.5">
+					<h3>Comment procéder ?</h3>
+					<ul>
+						<li class="fragment">Même principe que pour le scraping du tableau des sagas</li>
+						<li class="fragment">Extraction du contenu via la bibliothèque <a href="https://www.oracle.com/java/technologies/jaxp-introduction.html">Java API for XML Processing (JAXP)</a></li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Exposition des données par API</h2>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Une interface web et Android</h2>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Build et releases</h2>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Environnements de test et de production</h2>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Conclusion</h2>
+				</section>
+			</section>
 		</div>
 	</div>
-
 	<script src="js/reveal.js"></script>
+	<script src="plugin/highlight/highlight.min.js"></script>
 	<script src="plugin/notes/notes.js"></script>
 	<script>
-		// More info about config & dependencies:
-		// - https://github.com/hakimel/reveal.js#configuration
-		// - https://github.com/hakimel/reveal.js#dependencies
 		Reveal.initialize({
 			hash: true,
-			plugins: [RevealNotes],
+			plugins: [RevealNotes, RevealHighlight],
 			dependencies: [
 				{ src: 'plugin/markdown/marked.js' },
 				{ src: 'plugin/markdown/markdown.js' },
-				{ src: 'plugin/highlight/highlight.js' },
+				{ src: 'plugin/highlight/highlight.min.js' },
 				{ src: 'plugin/notes/notes.js', async: true }
 			]
 		});
