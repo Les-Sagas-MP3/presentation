@@ -146,6 +146,45 @@
 				<section>
 					<h2>Gestion de la structure de données</h2>
 				</section>
+				<section>
+					<h3>Késako ?</h3>
+					<ul>
+						<li class="fragment">Base de données relationnelle (PostgreSQL) décrite en SQL</li>
+						<li class="fragment">Chaque version du backend s'attend à avoir une structure de données propre
+							à elle-même</li>
+						<li class="fragment">La structure de la base de données doit pouvoir évoluer avec les versions
+							du backend</li>
+					</ul>
+					<aside class="notes">
+						<p>Exemple : dans une nouvelle version du backend, on récupère une nouvelle données depuis
+							Netophonix. La base doit donc évoluer pour accueillir cette nouvelle donnée.</p>
+					</aside>
+				</section>
+				<section>
+					<img src="images/logos/liquibase.png" />
+				</section>
+				<section>
+					<h3>Liquibase à la rescousse</h3>
+					<ul>
+						<li class="fragment">Lors de son démarrage, le backend fait appel à la bibliothèque Liquibase
+						</li>
+						<li class="fragment">Liquibase exécute en base de données les scripts SQL qui lui sont fournis
+						</li>
+						<li class="fragment">Si un script SQL a déjà été exécuté auparavant (dans une autre version du
+							backend par exemple), il est ignoré</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Liquibase à la rescousse</h3>
+					<pre><code data-trim>
+--liquibase formatted sql
+
+--changeset lessagasmp3:add-saga-workspace
+ALTER TABLE saga ADD workspace character varying(255);
+--rollback alter table saga drop column workspace;
+
+					</code></pre>
+				</section>
 			</section>
 			<section>
 				<section>
@@ -188,9 +227,12 @@
 				<section data-background-opacity="0.5">
 					<h3>Comment procéder ?</h3>
 					<ul>
-						<li class="fragment">Téléchargement du code HTML fourni par la page du tableau des sagas Netophonix</li>
-						<li class="fragment">Pour chaque ligne <code>&#60;tr&#62;</code> du tableau, on créé / met à jour une saga dans la BDD</li>
-						<li class="fragment">Parcours de la structure du DOM avec la bibliothèque <a href="https://htmlunit.sourceforge.io/">HtmlUnit</a></li>
+						<li class="fragment">Téléchargement du code HTML fourni par la page du tableau des sagas
+							Netophonix</li>
+						<li class="fragment">Pour chaque ligne <code>&#60;tr&#62;</code> du tableau, on créé / met à
+							jour une saga dans la BDD</li>
+						<li class="fragment">Parcours de la structure du DOM avec la bibliothèque <a
+								href="https://htmlunit.sourceforge.io/">HtmlUnit</a></li>
 					</ul>
 					<aside class="notes">
 						<p>Scraping HTML du tableau des sagas et lecture des PDFs de l'archive complexe</p>
@@ -208,10 +250,14 @@
 				<section data-background-opacity="0.5">
 					<h3>Comment procéder ?</h3>
 					<ul>
-						<li class="fragment">Ouverture du fichier et extraction du contenu sous forme de tableau de lignes de texte</li>
-						<li class="fragment">Récupération des données dans l'ordre d'apparition dans le PDF (ligne 1 = auteur, ligne 2 = musique, etc.)</li>
-						<li class="fragment">Inconvénient notable : si un fichier est mal formaté, les mauvaises données peuvent être importées</li>
-						<li class="fragment">Extraction des lignes de texte via la bibliothèque <a href="https://pdfbox.apache.org/">Apache PDFBox®</a></li>
+						<li class="fragment">Ouverture du fichier et extraction du contenu sous forme de tableau de
+							lignes de texte</li>
+						<li class="fragment">Récupération des données dans l'ordre d'apparition dans le PDF (ligne 1 =
+							auteur, ligne 2 = musique, etc.)</li>
+						<li class="fragment">Inconvénient notable : si un fichier est mal formaté, les mauvaises données
+							peuvent être importées</li>
+						<li class="fragment">Extraction des lignes de texte via la bibliothèque <a
+								href="https://pdfbox.apache.org/">Apache PDFBox®</a></li>
 					</ul>
 				</section>
 			</section>
@@ -232,9 +278,12 @@
 				<section data-background-opacity="0.5">
 					<h3>Comment procéder ?</h3>
 					<ul>
-						<li class="fragment">Le forum Netophonix dispose du module phpBB Smartfeed exposant un flux XML</li>
+						<li class="fragment">Le forum Netophonix dispose du module phpBB Smartfeed exposant un flux XML
+						</li>
 						<li class="fragment">Les donnnées du flux sont paramétrables via son URL</li>
-						<li class="fragment">Par exemple : https://forum.netophonix.com:443/smartfeed.php?forum=1&firstpostonly=1&limit=NO_LIMIT&sort_by=postdate_desc&feed_type=RSS2.0&feed_style=HTMLSAFE</li>
+						<li class="fragment">Par exemple :
+							https://forum.netophonix.com:443/smartfeed.php?forum=1&firstpostonly=1&limit=NO_LIMIT&sort_by=postdate_desc&feed_type=RSS2.0&feed_style=HTMLSAFE
+						</li>
 					</ul>
 				</section>
 				<section data-background-opacity="0.5">
@@ -255,7 +304,9 @@
 					<h3>Comment procéder ?</h3>
 					<ul>
 						<li class="fragment">Même principe que pour le scraping du tableau des sagas</li>
-						<li class="fragment">Extraction du contenu via la bibliothèque <a href="https://www.oracle.com/java/technologies/jaxp-introduction.html">Java API for XML Processing (JAXP)</a></li>
+						<li class="fragment">Extraction du contenu via la bibliothèque <a
+								href="https://www.oracle.com/java/technologies/jaxp-introduction.html">Java API for XML
+								Processing (JAXP)</a></li>
 					</ul>
 				</section>
 			</section>
@@ -263,10 +314,99 @@
 				<section>
 					<h2>Exposition des données par API</h2>
 				</section>
+				<section>
+					<h3>Définition et utilité d'une API</h3>
+					<ul>
+						<li class="fragment">API : Application Programming Interface (= Interface de Programmation
+							Applicative en français)</li>
+						<li class="fragment">Permet d'accéder aux fonctions ou aux données d'une application à distance
+						</li>
+						<li class="fragment">Standard dans les années actuelles</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Usage de notre API</h3>
+					<p class="fragment">Un appel à l'URL suivante :</p>
+					<small><a class="fragment"
+							href="https://api.les-sagas-mp3.fr/api/saga?offset=0&limit=10">https://api.les-sagas-mp3.fr/api/saga?offset=0&limit=10</a></small>
+					<pre class="fragment"><code data-trim>{
+  "content": [
+    {
+      "id": 563,
+      "title": "1287"
+    },
+    {
+      "id": 570,
+      "title": "14.92",
+    },
+    [...]
+  ],
+  "totalPages": 108,
+  "totalElements": 1077,
+  "number": 0,
+  "size": 10,
+  "numberOfElements": 10,
+  "sort": {
+    "sorted": true,
+    "unsorted": false,
+    "empty": false
+  }
+}</code></pre>
+					<aside class="notes">
+						<p>Dans l'exemple, on lit des données en BDD, mais il est aussi possible d'écrire des données
+						</p>
+					</aside>
+				</section>
+				<section>
+					<h3>Ici, mettre le schéma d'archi à jour</h3>
+				</section>
+				<section>
+					<h3>Mais les gens, ils ne vont pas lire/écrire du JSON ?</h3>
+					<ul>
+						<li class="fragment">Ils devraient</li>
+						<li class="fragment">Nan, je déconne.</li>
+						<li class="fragment">La mise en forme des données à l'affichage est déléguée à un autre
+							composant : le "frontend"</li>
+						<li class="fragment">Dans notre cas, 2 composants différents se "branchent" à l'API : un site
+							web et une application Android</li>
+					</ul>
+				</section>
 			</section>
 			<section>
 				<section>
 					<h2>Une interface web et Android</h2>
+				</section>
+				<section>
+					<h3>Deux technologies complètement différentes</h3>
+					<ul>
+						<li class="fragment">Un site web : ensemble de fichiers HTML, JS, CSS interprétés par un
+							navigateur</li>
+						<li class="fragment">Une application Android : exécutable fonctionnant avec l'Android Runtime
+							(ART) spécifique à la plateforme</li>
+						<li class="fragment">On veut vraiment maintenir ces 2 applications en parallèle ?</li>
+						<li class="fragment">La question est vite répondue : NON</li>
+					</ul>
+				</section>
+				<section>
+					<img src="images/logos/ionic.png" />
+				</section>
+				<section>
+					<h3>Ionic, un framework pour les générer toutes</h3>
+					<ul>
+						<li class="fragment">Génère des applications compatibles sur différentes plateformes : Web,
+							Desktop, Android, iOS</li>
+						<li class="fragment">Un projet Ionic peut s'écrire en Angular, React ou Vue</li>
+						<li class="fragment">Ionic propose un large choix de composants prêts à l'emploi : menu de
+							navigation, boutons flottants, listes, etc.</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Ionic pour notre usage</h3>
+					<img class="fragment" src="images/les-sagas-mp3/liste.png" />
+					<img class="fragment" src="images/les-sagas-mp3/vue-saga.png" />
+				</section>
+				<section>
+					<h3>Ici, mettre le schéma d'archi à jour</h3>
 				</section>
 			</section>
 			<section>
