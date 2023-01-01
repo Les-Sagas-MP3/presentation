@@ -40,6 +40,7 @@
 					<audio preload controls src="audio/extrait-donjon-de-naheulbeuk.mp3">
 					</audio>
 					<p class="fragment"><img src="images/sagas/naheulbeuk.jpg" height="400px" /></p>
+					<p><em class="fragment"><strong>Le Donjon de Naheulbeuk</strong>, créé par <a href="http://penofchaos.com/">John Lang (AKA Pen of Chaos)</a> en 2001</em></p>
 					<aside class="notes">
 						<p>Le Donjon de Naheulbeuk, une saga audio créée en 2001 par John Lang, diffusée gratuitement
 							sur internet.</p>
@@ -50,6 +51,7 @@
 					<audio preload controls src="audio/extrait-eden.mp3">
 					</audio>
 					<p class="fragment"><img src="images/sagas/eden.jpg" height="400px" /></p>
+					<em class="fragment"><strong>Eden</strong>, créé par <a href="https://twitter.com/Antoine_Rouaud">Antoine Rouaud</a> en 2006</em>
 					<aside class="notes">
 						<p>Créée entre 2006 et 2009 par Antoine Rouaud, Eden est un genre de space opéra audio</p>
 						<p>3 saisons et une suite entre 2012 et 2013 : Eden Sacrifice</p>
@@ -59,6 +61,7 @@
 					<audio preload controls src="audio/extrait-bat-man.mp3">
 					</audio>
 					<p class="fragment"><img src="images/sagas/bat-man.jpg" height="400px" /></p>
+					<em class="fragment"><strong>Bat-man</strong>, créé par <a href="https://twitter.com/Johnnypigeon">Johnny</a> et <a href="https://twitter.com/RanneMadsen">Ranne Madsen</a> en 2019</em>
 					<aside class="notes">
 						<p>Créée entre 2019 par Johnny, Ranne Madsen</p>
 					</aside>
@@ -327,8 +330,8 @@ ALTER TABLE saga ADD workspace character varying(255);
 				<section>
 					<h3>Usage de notre API</h3>
 					<p class="fragment">Un appel à l'URL suivante :</p>
-					<small><a class="fragment"
-							href="https://api.les-sagas-mp3.fr/api/saga?offset=0&limit=10">https://api.les-sagas-mp3.fr/api/saga?offset=0&limit=10</a></small>
+					<em><a class="fragment"
+							href="https://api.les-sagas-mp3.fr/api/saga?offset=0&limit=10">https://api.les-sagas-mp3.fr/api/saga?offset=0&limit=10</a></em>
 					<pre class="fragment"><code data-trim>{
   "content": [
     {
@@ -411,17 +414,92 @@ ALTER TABLE saga ADD workspace character varying(255);
 			</section>
 			<section>
 				<section>
+					<h2>Ca marche sur mon poste. Et maintenant ?</h2>
+				</section>
+				<section>
+					<h3>Les limites de mon ordinateur</h3>
+					<ul>
+						<li class="fragment">On utilise le nom de domaine <b>localhost</b> et non <b>les-sagas-mp3.fr</b></li>
+						<li class="fragment">Inaccessible sur internet</li>
+						<li class="fragment">Pas disponible 24/7. <em>J'éteins mon ordinateur quand je ne m'en sers pas...</em></li>
+					</ul>
+				</section>
+				<section>
+					<h3>La solution : utiliser un serveur</h3>
+					<p>Un <strong>serveur</strong> est un ordinateur distant. A nous de le configurer pour qu'il réponde à nos besoins :</p>
+					<ul>
+						<li class="fragment">Allocution d'une IP publique <em>x.x.x.x</em></li>
+						<li class="fragment">Pointage de notre nom de domaine <strong>les-sagas-mp3.fr</strong> vers son IP publique</li>
+						<li class="fragment">Installation de nos composants API et App pour les rendre disponibles</li>
+					</ul>
+					<p class="fragment"></p>
+				</section>
+				<section>
+					<h3>Ici, mettre le schéma d'archi à jour</h3>
+				</section>
+				<section>
+					<h3>Et pourquoi pas plusieurs serveurs ?</h3>
+					<p>En plus du serveur de production (= celui utilisé par les utilisateurs finaux), il peut être intéressant d'en avoir d'autres pour faire des tests sur des environnements dédiés.</p>
+				</section>
+				<section>
+					<h3>Ici, mettre le schéma d'archi à jour</h3>
+				</section>
+				<section>
+					<h3>De quels serveurs a-t-on besoin ?</h3>
+					<p><strong>BESOIN</strong> : un serveur permettant d'héberger une application Java et une application web</p>
+					<p><strong class="red">PROBLEME</strong> : ça n'existe pas sur étagère.</p>
+					<p><strong class="green">SOLUTION</strong> : créer notre propre infrastructure dans le Cloud</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Naufrage dans le Cloud</h2>
+				</section>
+				<section>
+					<h3>Création du serveur</h3>
+					<p>Dans le Cloud, il n'y a pas <em>que</em> un serveur à créer</p>
+					<ul>
+						<li class="fragment">Un réseau VPC et un sous-réseau</li>
+						<li class="fragment">Un sous-réseau</li>
+						<li class="fragment">Les règles de pare-feu</li>
+						<li class="fragment">Une instance de machine virtuelle avec un disque persistant</li>
+						<li class="fragment">Une IP publique</li>
+						<li class="fragment">Les entrées DNS api*.les-sagas-mp3.fr et app*.les-sagas-mp3.fr</li>
+						<li class="fragment">Un bucket de stockage de fichiers</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Création du serveur</h3>
+					<p>Une fois créé, le serveur est vide. Il faut encore installer et configurer :</p>
+					<ul>
+						<li class="fragment">Java</li>
+						<li class="fragment">Un serveur web (Nginx en l'occurrence)</li>
+						<li class="fragment">Nos composants API et App</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Comment on procède ?</h3>
+					<p>Pour chacun de ces éléments, un formulaire à saisir dans la console du fournisseur de Cloud</p>
+					<p>Les manipulations sont à répéter <strong>autant de fois</strong> qu'il y a d'environnements de test ou de production</p>
+					<blockquote class="fragment">➕ il y a d'opérations manuelles<br/>➕ il y a de risques d'erreurs</blockquote>
+				</section>
+				<section>
+					<h3>Et si on automatisait tout ça ?</h3>
+				</section>
+			</section>
+			<section>
+				<section>
 					<h2>Build et releases</h2>
 				</section>
 			</section>
 			<section>
 				<section>
-					<h2>Environnements de test et de production</h2>
-				</section>
-			</section>
-			<section>
-				<section>
 					<h2>Conclusion</h2>
+				</section>
+				<section>
+					<h3>Droits d'auteur et propriété intellectuelle</h3>
+					<p>Les extraits audio et des artwork appartiennent à leurs propriétaire respectifs (voir les slides correspondantes)</p>
+					<p>Tout le reste est sous licence MIT.</p>
 				</section>
 			</section>
 		</div>
@@ -432,6 +510,7 @@ ALTER TABLE saga ADD workspace character varying(255);
 	<script>
 		Reveal.initialize({
 			hash: true,
+			slideNumber: "c/t",
 			plugins: [RevealNotes, RevealHighlight],
 			dependencies: [
 				{ src: 'plugin/markdown/marked.js' },
