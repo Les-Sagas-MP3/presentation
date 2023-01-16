@@ -544,7 +544,7 @@ ALTER TABLE saga ADD workspace character varying(255);
 				<section>
 					<h3>Et si on automatisait l'automatisation ?</h3>
 					<div class="r-stack">
-						<img class="fragment" src="images/gifs/huh-heh.gif" height="300px" />
+						<img class="fragment" src="images/gifs/mind-blow-galaxy.gif" height="300px" />
 					</div>
 				</section>
 				<section>
@@ -564,11 +564,45 @@ ALTER TABLE saga ADD workspace character varying(255);
 					<h2>Here comes the CI/CD</h2>
 				</section>
 				<section>
-					<h3>Deux processus indissociables</h3>
+					<h3>La centralisation du code source</h3>
+					<p>Quand plusieurs développeurs travaillent chacun de leur côté, comment faire pour se synchroniser ?</p>
 					<ul>
-						<li class="fragment"><strong>CI (Continuous Integration)</strong> : compile les composants API
+						<li class="fragment">On copie les fichiers sur une clé USB</li>
+						<li class="fragment">On s'envoit les fichiers par mail</li>
+						<li class="fragment">On dépose ses fichiers sur un Drive</li>
+						<li class="fragment">On utilise un logiciel de gestion de versions</li>
+					</ul>
+					<p>Aujourd'hui, le logiciel le plus répandu est <strong>Git</strong>. <strong>GitHub</strong> est une plateforme qui héberge des dépôts git.</p>
+				</section>
+				<section>
+					<h3>GitHub et les Pull Requests</h3>
+					<blockquote class="fragment">Une pull request (demande de tirage) simule la fusion de 2 versions de code source</blockquote>
+					<p class="fragment">Sur cette simulation, les participants peuvent :</p>
+					<ul>
+						<li class="fragment">📝 <strong>reparcourir</strong> l'ensemble des changements</li>
+						<li class="fragment">🪶 <strong>annoter</strong> des lignes, <strong>proposer</strong> des améliorations</li>
+						<li class="fragment">✔️ effectuer des <strong>traitements</strong> automatiques sur le code fusionné</li>
+					</ul>
+					<p>Tant que la pull request n'est pas validée, la version de production reste intacte</p>
+					<aside class="notes">
+						<p>Ce mécanisme permet dans à tout un chacun de proposer des modifications sur un logiciel open-source</p>
+					</aside>
+				</section>
+				<section>
+					<h3>Vers la sortie de la CI</h3>
+					<p class="fragment">Parmis les traitements automatiques réalisés sur la PR, nous réalisons :</p>
+					<ul>
+						<li class="fragment">⚙️ la compilation du code</li>
+						<li class="fragment">✅ des tests automatisés</li>
+						<li class="fragment">🚚 le dépôt du livrable dans un répertoire de stockage</li>
+					</ul>
+				</section>
+				<section>
+					<h3>En résumé</h3>
+					<ul>
+						<li class="fragment"><strong>CI (Continuous Integration)</strong> : teste et compile les composants API
 							et APP et archive les résultats dans un répertoire accessible de la CD</li>
-						<li class="fragment"><strong></strong>CD (Continuous Deployment)</strong> : s'assure du bon
+						<li class="fragment"><strong>CD (Continuous Deployment)</strong> : s'assure du bon
 							fonctionnement de l'infrastructure cible et installe les composants fournis par la CI</li>
 					</ul>
 				</section>
