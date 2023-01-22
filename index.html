@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>Ma Stack Ma Bataille</title>
+	<title>Les Sagas MP3</title>
 
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/reveal.css">
@@ -30,7 +30,8 @@
 	<div class="reveal">
 		<div class="slides">
 			<section>
-				<h1>Ma Stack, Ma Bataille</h1>
+				<h1>Les Sagas MP3</h1>
+				<h2>Une illustration de la culture DevOps</h2>
 			</section>
 			<section>
 				<section>
@@ -424,8 +425,9 @@ ALTER TABLE saga ADD workspace character varying(255);
 					<h3>Les limites de mon ordinateur</h3>
 					<ul>
 						<li class="fragment">On utilise le nom de domaine <b>localhost</b> et non
-							<b>les-sagas-mp3.fr</b></li>
-						<li class="fragment">Inaccessible sur internet</li>
+							<b>les-sagas-mp3.fr</b>
+						</li>
+						<li class="fragment">Inaccessible depuis internet</li>
 						<li class="fragment">Pas disponible 24/7. <em>J'éteins mon ordinateur quand je ne m'en sers
 								pas...</em></li>
 					</ul>
@@ -557,6 +559,10 @@ ALTER TABLE saga ADD workspace character varying(255);
 						<li class="fragment">et la source de nos composants API et APP qui proviennent toujours du poste
 							de développement</li>
 					</ul>
+					<aside class="notes">
+						<p>Le principal enjeu : permettre à des nouveaux développeurs d'intégrer facilement le projet.
+						</p>
+					</aside>
 				</section>
 			</section>
 			<section>
@@ -565,27 +571,34 @@ ALTER TABLE saga ADD workspace character varying(255);
 				</section>
 				<section>
 					<h3>La centralisation du code source</h3>
-					<p>Quand plusieurs développeurs travaillent chacun de leur côté, comment faire pour se synchroniser ?</p>
+					<p>Quand plusieurs développeurs travaillent chacun de leur côté, comment faire pour se synchroniser
+						?</p>
 					<ul>
 						<li class="fragment">On copie les fichiers sur une clé USB</li>
 						<li class="fragment">On s'envoit les fichiers par mail</li>
 						<li class="fragment">On dépose ses fichiers sur un Drive</li>
 						<li class="fragment">On utilise un logiciel de gestion de versions</li>
 					</ul>
-					<p>Aujourd'hui, le logiciel le plus répandu est <strong>Git</strong>. <strong>GitHub</strong> est une plateforme qui héberge des dépôts git.</p>
+					<p class="fragment">Aujourd'hui, le logiciel le plus répandu est <strong>Git</strong>.
+						<strong>GitHub</strong> est une plateforme qui héberge des dépôts git.</p>
 				</section>
 				<section>
 					<h3>GitHub et les Pull Requests</h3>
-					<blockquote class="fragment">Une pull request (demande de tirage) simule la fusion de 2 versions de code source</blockquote>
+					<blockquote class="fragment">Une pull request (demande de tirage) simule la fusion de 2 versions de
+						code source</blockquote>
 					<p class="fragment">Sur cette simulation, les participants peuvent :</p>
 					<ul>
 						<li class="fragment">📝 <strong>reparcourir</strong> l'ensemble des changements</li>
-						<li class="fragment">🪶 <strong>annoter</strong> des lignes, <strong>proposer</strong> des améliorations</li>
-						<li class="fragment">✔️ effectuer des <strong>traitements</strong> automatiques sur le code fusionné</li>
+						<li class="fragment">🪶 <strong>annoter</strong> des lignes, <strong>proposer</strong> des
+							améliorations</li>
+						<li class="fragment">✔️ effectuer des <strong>traitements</strong> automatiques sur le code
+							fusionné</li>
 					</ul>
-					<p>Tant que la pull request n'est pas validée, la version de production reste intacte</p>
+					<p class="fragment">Tant que la pull request n'est pas validée, la version de production reste
+						intacte</p>
 					<aside class="notes">
-						<p>Ce mécanisme permet dans à tout un chacun de proposer des modifications sur un logiciel open-source</p>
+						<p>Ce mécanisme permet dans à tout un chacun de proposer des modifications sur un logiciel
+							open-source</p>
 					</aside>
 				</section>
 				<section>
@@ -595,12 +608,16 @@ ALTER TABLE saga ADD workspace character varying(255);
 						<li class="fragment">⚙️ la compilation du code</li>
 						<li class="fragment">✅ des tests automatisés</li>
 						<li class="fragment">🚚 le dépôt du livrable dans un répertoire de stockage</li>
+						<li class="fragment">🚩 la création d'un nouveau serveur dédié à la version en cours de test
+							(CD)</li>
+						<small class="fragment">↪ Avec l'outillage Terraform et Ansible vu précédemment</small>
 					</ul>
 				</section>
 				<section>
 					<h3>En résumé</h3>
 					<ul>
-						<li class="fragment"><strong>CI (Continuous Integration)</strong> : teste et compile les composants API
+						<li class="fragment"><strong>CI (Continuous Integration)</strong> : teste et compile les
+							composants API
 							et APP et archive les résultats dans un répertoire accessible de la CD</li>
 						<li class="fragment"><strong>CD (Continuous Deployment)</strong> : s'assure du bon
 							fonctionnement de l'infrastructure cible et installe les composants fournis par la CI</li>
@@ -612,11 +629,37 @@ ALTER TABLE saga ADD workspace character varying(255);
 					<h2>Conclusion</h2>
 				</section>
 				<section>
-					<h3>Droits d'auteur et propriété intellectuelle</h3>
-					<p>Les extraits audio et des artworks appartiennent à leurs propriétaire respectifs (voir les slides
+					<h3>Un long projet qui a beaucoup évolué</h3>
+					<ul>
+						<li class="fragment">Différents essais à plusieurs niveaux : outils de développement, méthodes
+							de travail, hébergeurs...</li>
+						<li class="fragment">Un fil rouge pour faire de la veille et se former</li>
+						<li class="fragment">Une nouvelle perspective pour la communauté Netophonix</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Et le DevOps dans tout ça ?</h3>
+					<blockquote class="fragment">Le DevOps n'est pas un rôle mais une <strong>culture</strong>.
+					</blockquote>
+					<aside class="notes">
+						<p>Les processus et outils présentés ne sont que des exemples.</p>
+						<p>Un DevOps est un mouton à 5 pattes. Formons les développeurs, les admins systèmes.</p>
+						<p>Dans un processus d'amélioration continue => bien avec l'agilité</p>
+					</aside>
+				</section>
+				<section>
+					<h1>Merci</h1>
+				</section>
+				<section>
+					<h3>La suite ?</h3>
+					<p>L'intégralité du projet est disponible à l'adresse : 
+						<a href="https://github.com/Les-Sagas-MP3">github.com/les-sagas-mp3</a>
+					</p>
+					<p>Les extraits audio et des illustrations appartiennent à leurs propriétaire respectifs (voir les slides
 						correspondantes)</p>
 					<p>Tout le reste est sous licence <a
-							href="https://github.com/Les-Sagas-MP3/presentation/blob/main/LICENSE">GNU Affero General Public License</a></p>
+							href="https://github.com/Les-Sagas-MP3/presentation/blob/main/LICENSE">GNU Affero General
+							Public License</a></p>
 					<img src="images/logos/agplv3.png" />
 				</section>
 			</section>
