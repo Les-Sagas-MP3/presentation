@@ -14,3 +14,7 @@
 .green {
     color: darkgreen;
 }
+
+.no-border {
+    border: 0px !important;
+}
