@@ -1,0 +1,49 @@
+<section>
+    <h2>Scraping du flux XML</h2>
+</section>
+<section data-background-opacity="0.5">
+    <img class="r-stretch" src="images/netophonix/forum.png" />
+</section>
+<section data-background-opacity="0.5">
+    <img class="r-stretch" src="images/pictos/phpBB.png" />
+    <aside class="notes">
+        <p>Le forum Netophonix dispose du module phpBB Smartfeed exposant un flux XML</p>
+        <p>Les donnnées du flux sont paramétrables via son URL</p>
+    </aside>
+</section>
+<section data-background-opacity="0.5">
+    <h3>Comment procéder ?</h3>
+    <ul>
+        <li>Le forum Netophonix dispose du module phpBB Smartfeed exposant un flux XML
+        </li>
+        <li>Les donnnées envoyées dans le flux sont paramétrables via son URL</li>
+    </ul>
+    <blockquote>
+        https://forum.netophonix.com/smartfeed.php?<b><span
+                color="yellow">forum=1</span></b>&firstpostonly=1&limit=NO_LIMIT&<b><span
+                color="yellow">sort_by=postdate_desc</span></b>&feed_type=RSS2.0&feed_style=HTMLSAFE
+    </blockquote>
+</section>
+<section data-background-opacity="0.5">
+    <pre><code data-trim>
+&#60;item&#62;
+&#60;title&#62;Nouveautés :: Network Evil 6 - Arc Chris &amp; Pims - Chapitre IV :: Auteur Kwaam&#60;/title&#62;
+&#60;link&#62;https://forum.netophonix.com:443/viewtopic.php?f=1&amp;t=18929&amp;p=228153#p228153&#60;/link&#62;
+&#60;description&#62;&#60;![CDATA[Bonjour à tous !Bonjour à tous !On est à l’avant dernier chapitre du périple de Chris & Pims ! Accrochez vous bien parce que ce chapitre vous réserve bien des surprises avec la course poursuite d’Abba qui n’en finit plus. Et que dire pour le prochain et dernier chapitre… Soyez prêt ! Bonne écoute !Après leur rencontre avec Abba, Chris & Pims l&#39;ont poursuivie jusqu&#39;à atteindre un porte avion qui serait sa base d&#39;opération.Spotify : https://open.spotify.com/show/1I6CHnQoMTfAYvWeDUCMdeDeezer : https://deezer.com/show/3889637Apple Podcasts : https://podcasts.apple.com/us/podcast/n ... 1635379871Youtube : https://www.youtube.com/playlist?list=P ... WkO_tRtB28Podcloud : https://podcloud.fr/podcast/network-evil-6Google Podcasts : https://podcasts.google.com/feed/aHR0cH ... Nhc3QvbmU2Page de la série : https://www.wavesavengers.fr/creations- ... /episodes/Flux RSS de l’émission : https://www.wavesavengers.fr/feed/podcast/ne6DISTRIBUTION : https://www.wavesavengers.fr/creations- ... tribution/]]&#62;&#60;/description&#62;
+&#60;author&#62;no_email@example.com (Kwaam)&#60;/author&#62;
+&#60;category&#62;Nouveautés&#60;/category&#62;
+&#60;comments&#62;https://forum.netophonix.com:443/posting.php?mode=reply&amp;f=1&amp;t=18929&#60;/comments&#62;
+&#60;pubDate&#62;Wed, 09 Nov 2022 23:43:58 GMT&#60;/pubDate&#62;
+&#60;guid isPermaLink="false"&#62;https://forum.netophonix.com:443/viewtopic.php?f=1&amp;t=18929&amp;p=228153#p228153&#60;/guid&#62;
+&#60;/item&#62;
+</code></pre>
+</section>
+<section data-background-opacity="0.5">
+    <h3>Comment procéder ?</h3>
+    <ul>
+        <li>Même principe que pour le scraping du tableau des sagas</li>
+        <li>Extraction du contenu via la bibliothèque <a
+                href="https://www.oracle.com/java/technologies/jaxp-introduction.html">Java API for XML
+                Processing (JAXP)</a></li>
+    </ul>
+</section>

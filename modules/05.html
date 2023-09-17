@@ -1,0 +1,51 @@
+<section>
+    <h2>Scraping du tableau Netophonix</h2>
+</section>
+<section data-background-opacity="0.5">
+    <img class="r-stretch" src="images/netophonix/liste.png" />
+</section>
+<section data-background-opacity="0.5">
+    <pre><code data-trim>
+&#60;tr class="row1"&#62; 
+  &#60;td class="gen medpad" align="center"&#62;
+    &#60;span id="808"&#62;&nbsp;16&nbsp;&#60;/span&#62;
+  &#60;/td&#62;
+  &#60;td class="genmed medpad" align="left"&#62;
+    &#60;a href="https://aghostslife.jimdofree.com" class="topictitle" target="_blank" style="float: left; display: block; padding-top: 4px; padding-left: 4px;"&#62;  A Ghost's Life &#60;/a&#62; 
+    &#60;a href="http://wiki.netophonix.com/A%20Ghost%27s%20Life" style="float: right; padding-top: 4px;"&#62;
+      &#60;img border="0" title="Plus d'infos sur le Netowiki" alt="Plus d'infos sur le Netowiki" src="./images/wikilink.gif"/&#62;
+    &#60;/a&#62;
+  &#60;/td&#62;
+  &#60;td class="genmed medpad" align="center" valign="middle"&#62;&#60;span class="gen"&#62;Sarausa&#60;/span&#62;&#60;/td&#62;
+  &#60;td class="genmed medpad" align="center" valign="middle"&#62;&#60;span class="gensmall"&#62;Fantastique&#60;/span&#62;&#60;/td&#62;
+  &#60;td class="gennotetab" align="center" valign="top" width="15"&#62;
+    &#60;span class="gennotetab"&#62;
+      &#60;img align="top" valign="middle" border="0" alt="Niveau artistique en jaune et niveau technique en bleu." title="Niveau artistique en jaune et niveau technique en bleu" src="images/jaugeslist.php?art=171&tech=167"&#62;
+      &#60;td class="genmed medpad" align="center" valign="middle"&#62;
+        &#60;span class="gensmall"&#62;
+          &#60;a href="./saga_avis.php?saga_id=808&amp;notes_usid=808&amp;critview=1&amp;startlist=0&amp;saga_seek=&amp;orderlist=ASC&amp;modelist=titres"&#62;12 avis&#60;/a&#62;
+        &#60;/span&#62;
+      &#60;/td&#62;
+    &#60;/span&#62;
+  &#60;/td&#62;
+  &#60;td class="genmed medpad" align="center" valign="middle"&#62;
+    &#60;span class="gensmall"&#62;104&#60;/span&#62;
+  &#60;/td&#62;
+&#60;/tr&#62;
+</code></pre>
+</section>
+<section data-background-opacity="0.5">
+    <h3>Comment procéder ?</h3>
+    <ul>
+        <li class="fragment">Téléchargement du code HTML fourni par la page du tableau des sagas
+            Netophonix</li>
+        <li class="fragment">Pour chaque ligne <code>&#60;tr&#62;</code> du tableau, on créé / met à
+            jour une saga dans la BDD</li>
+        <li class="fragment">Parcours de la structure du DOM avec la bibliothèque <a
+                href="https://htmlunit.sourceforge.io/">HtmlUnit</a></li>
+    </ul>
+    <aside class="notes">
+        <p>Scraping HTML du tableau des sagas et lecture des PDFs de l'archive complexe</p>
+        <p>La communauté est au courant de la réutilisation de ces données</p>
+    </aside>
+</section>

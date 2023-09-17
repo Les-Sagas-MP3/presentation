@@ -1,0 +1,47 @@
+<section>
+    <h2>Les données à manipuler</h2>
+</section>
+<section>
+    <h3>Typologies et sources de données</h3>
+    <ul>
+        <p class="left fragment" data-fragment-index="1">📱 Les sagas et leurs métadonnées (auteur, genre,
+            synopsis, etc.)</p>
+        <small class="fragment" data-fragment-index="5">↪ Liste des sagas Netophonix</small>
+        <p class="left fragment" data-fragment-index="2">📑 Les saisons, épisodes et images</p>
+        <small class="fragment" data-fragment-index="6">↪ Archive de Clator</small>
+        <p class="left fragment" data-fragment-index="3">📥 Les actualités (nouvelles sagas, nouveaux épisodes,
+            castings, etc.)</p>
+        <small class="fragment" data-fragment-index="7">↪ Flux RSS du forum Netophonix</small>
+        <p class="left fragment" data-fragment-index="4">🎧 Les favoris</p>
+        <small class="fragment" data-fragment-index="8">↪ Propres à l'application</small>
+    </ul>
+    <aside class="notes">
+        <p>Les sagas et leurs métadonnées : distribution des rôles, site web du projet...</p>
+    </aside>
+</section>
+<section data-background-opacity="0.5">
+    <img src="images/schemas/sources-donnees.drawio.png" />
+    <aside class="notes">
+        <p><a href="https://app.diagrams.net/#G1XNHEUIQINpKY-KfhNHDFEsKaN1La3bi2">Editer le schéma</a>
+        </p>
+    </aside>
+</section>
+<section data-background-opacity="0.5">
+    <h3>Vers la centralisation des données</h3>
+    <ul>
+        <li class="fragment">Données des sources externes complexes à isoler</li>
+        <li class="fragment">Peu de mises à jour sur les sources externes (1 fois par jour maximum)</li>
+        <li class="fragment">Dépendance à un service externe</li>
+    </ul>
+    <aside class="notes">
+        <p>Scraping HTML du tableau des sagas et lecture des PDFs de l'archive complexe</p>
+        <p>La communauté est au courant de la réutilisation de ces données (légal)</p>
+    </aside>
+</section>
+<section data-background-opacity="0.5">
+    <img class="r-stretch no-border" src="images/schemas/centralisation-donnees.drawio.png" />
+</section>
+<aside class="notes">
+    <p><a href="https://app.diagrams.net/#G1VKxISMQ8JSxlCQauVBiVoMyudoGArDWZ">Editer le schéma</a></p>
+    <p>Les flèches sont inversées pour visualiser où vont les données</p>
+</aside>

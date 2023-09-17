@@ -1,0 +1,66 @@
+<section>
+    <h2>Exposition des données par API</h2>
+</section>
+<section>
+    <h3>Définition et utilité d'une API</h3>
+    <ul>
+        <li class="fragment">API : Application Programming Interface (= Interface de Programmation
+            Applicative en français)</li>
+        <li class="fragment">Permet d'accéder aux fonctions ou aux données d'une application à distance
+        </li>
+        <li class="fragment">Standard dans les années actuelles</li>
+    </ul>
+</section>
+<section>
+    <h3>Usage de notre API</h3>
+    <p>Un appel à l'URL suivante :</p>
+    <em><a
+            href="https://api.les-sagas-mp3.fr/api/saga?offset=0&limit=10">https://api.les-sagas-mp3.fr/api/saga?offset=0&limit=10</a></em>
+    <pre class="fragment"><code data-trim>{
+"content": [
+{
+"id": 563,
+"title": "1287"
+},
+{
+"id": 570,
+"title": "14.92",
+},
+[...]
+],
+"totalPages": 108,
+"totalElements": 1077,
+"number": 0,
+"size": 10,
+"numberOfElements": 10,
+"sort": {
+"sorted": true,
+"unsorted": false,
+"empty": false
+}
+}</code></pre>
+    <aside class="notes">
+        <p>Dans l'exemple, on lit des données en BDD, mais il est aussi possible d'écrire des données
+        </p>
+    </aside>
+</section>
+<section data-background-opacity="0.5">
+    <img class="r-stretch no-border" src="images/schemas/api.drawio.png" />
+    <aside class="notes">
+        <p><a href="https://app.diagrams.net/#G1VPJYxg2IU6ssOlZ2uCvpk7XVEGSPExdC">Editer le schéma</a>
+        </p>
+    </aside>
+</section>
+<section>
+    <h3>Mais les gens, ils ne vont pas lire/écrire du JSON ?</h3>
+    <ul>
+        <li class="fragment">Ils devraient <span class="fragment"> - Nan, je déconne</span></li>
+        <li class="fragment">La mise en forme des données à l'affichage est déléguée à un autre
+            composant : le "frontend"</li>
+    </ul>
+    <blockquote class="fragment">
+        Dans notre cas, on veut pouvoir accéder aux données par 2 moyens : un site web 🖥️ et une
+        application Android📱. Ce sont donc <b>2 composants différents</b> qui devront se connecter à
+        l'API.
+    </blockquote>
+</section>

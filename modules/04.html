@@ -1,0 +1,52 @@
+<section>
+    <h2>Gestion de la structure de données</h2>
+</section>
+<section>
+    <h3>Késako ?</h3>
+    <ul>
+        <li class="fragment">Base de données relationnelle (PostgreSQL) décrite en SQL</li>
+        <li class="fragment">Chaque version du backend s'attend à avoir une structure de données propre
+            à elle-même</li>
+        <li class="fragment">La structure de la base de données doit pouvoir évoluer avec les versions
+            du backend</li>
+    </ul>
+    <aside class="notes">
+        <p>Structure de données = façon de ranger les données</p>
+        <p>Exemple : dans une nouvelle version du backend, on récupère une nouvelle données depuis
+            Netophonix. La base doit donc évoluer pour accueillir cette nouvelle donnée.</p>
+    </aside>
+</section>
+<section>
+    <img src="images/logos/liquibase.png" />
+</section>
+<section>
+    <h3>Liquibase à la rescousse</h3>
+    <ul>
+        <li>Lors de son démarrage, le backend fait appel à la bibliothèque Liquibase
+        </li>
+        <li>Liquibase exécute en base de données les scripts SQL qui lui sont fournis
+        </li>
+        <li>Si un script SQL a déjà été exécuté auparavant, il est ignoré</li>
+    </ul>
+</section>
+<section>
+    <h3>Liquibase à la rescousse</h3>
+    <pre><code data-trim>
+--liquibase formatted sql
+
+--backend-version:1.0
+--changeset lessagasmp3:create-table-saga
+CREATE TABLE IF NOT EXISTS saga (
+id bigint primary key,
+synopsis text,
+title character varying(255)
+);
+--rollback drop table saga;
+
+--backend-version:1.1
+--changeset lessagasmp3:add-saga-status
+ALTER TABLE saga ADD status character varying(255);
+--rollback alter table saga drop column status;
+
+    </code></pre>
+</section>

@@ -1,0 +1,19 @@
+<section>
+    <h2>Lecture de l'archive de Clator</h2>
+</section>
+<section data-background-opacity="0.5">
+    <img class="r-stretch" src="images/archive-clator/lepervier.png" />
+</section>
+<section data-background-opacity="0.5">
+    <h3>Comment procéder ?</h3>
+    <ol>
+        <li class="fragment">Ouverture du fichier et extraction du contenu sous forme de tableau de
+            lignes de texte</li>
+        <li class="fragment">Récupération des données dans l'ordre d'apparition dans le PDF (ligne 1 =
+            auteur, ligne 2 = musique, etc.)</li>
+        <li class="fragment">Inconvénient notable : si un fichier est mal formaté, les mauvaises données
+            peuvent être importées</li>
+        <li class="fragment">Extraction des lignes de texte via la bibliothèque <a
+                href="https://pdfbox.apache.org/">Apache PDFBox®</a></li>
+    </ol>
+</section>

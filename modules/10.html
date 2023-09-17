@@ -1,0 +1,54 @@
+<section>
+    <h2>Ca marche sur mon poste. Et maintenant ?</h2>
+</section>
+<section>
+    <h3>Les limites de mon ordinateur</h3>
+    <ul>
+        <li class="fragment">Inaccessible depuis internet</li>
+        <li class="fragment">On utilise le nom de domaine <b>localhost</b> et non
+            <b>les-sagas-mp3.fr</b>
+        </li>
+        <li class="fragment">Pas disponible 24/7. <em>J'éteins mon ordinateur quand je ne m'en sers
+                pas...</em></li>
+    </ul>
+</section>
+<section>
+    <h3>La solution : utiliser un serveur</h3>
+    <p>Un <strong>serveur</strong> est un ordinateur distant. A nous de le configurer pour qu'il réponde
+        à nos besoins :</p>
+    <ul>
+        <li class="fragment">Allocation d'une IP publique <b>x.x.x.x</b></li>
+        <li class="fragment">Pointage de notre nom de domaine <b>les-sagas-mp3.fr</b> vers son
+            IP publique</li>
+        <li class="fragment">Installation de nos composants API et App pour les rendre disponibles</li>
+    </ul>
+</section>
+<section data-background-opacity="0.5">
+    <img class="r-stretch no-border" src="images/schemas/serveur.drawio.png" />
+    <aside class="notes">
+        <p><a href="https://app.diagrams.net/#G11OsPj1SYt-Lam6RNFOEILlnYrjC5tmB6">Editer le schéma</a>
+        </p>
+    </aside>
+</section>
+<section>
+    <h3>Et pourquoi pas plusieurs serveurs ?</h3>
+    <ul>
+        <li>Environnement de <b color="red">production</b> : utilisé par les utilisateurs finaux</li>
+        <li>Environnements de <b color="green">test</b> : utilisé par les développeurs, testeurs...</li>
+    </ul>
+</section>
+<section data-background-opacity="0.5">
+    <img class="r-stretch no-border" src="images/schemas/serveurs.drawio.png" />
+    <aside class="notes">
+        <p><a href="https://app.diagrams.net/#G1mD3bUv1ga-qYLEsQKWz9LZi1N_96wRi5">Editer le schéma</a>
+        </p>
+    </aside>
+</section>
+<section>
+    <h3>Quel type de serveur ?</h3>
+    <blockquote>Des serveurs permettant d'héberger une application web, une
+        application Java et une base de données PostgreSQL</blockquote>
+    <p class="fragment"><strong color="red">PROBLEME</strong> : ça n'existe pas sur étagère.</p>
+    <p class="fragment"><strong color="green">SOLUTION</strong> : créer notre propre infrastructure dans
+        le Cloud</p>
+</section>
