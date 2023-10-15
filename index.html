@@ -34,6 +34,10 @@
 			<section>
 				<h1>Les Sagas MP3</h1>
 				<h2>La culture DevOps au service des séries audio</h2>
+				<aside class="notes">
+					<p>Internet est requis pour l'audio en fin de présentation</p>
+					<p>La lecture automatique des fichiers audio doit être activée dans le navigateur</p>
+				</aside>
 			</section>
 			<section data-external="modules/01.html"></section>
 			<section data-external="modules/02.html"></section>
@@ -63,8 +67,13 @@
 				{ src: 'plugin/markdown/markdown.js' },
 				{ src: 'plugin/highlight/highlight.min.js' },
 				{ src: 'plugin/notes/notes.js', async: true },
-				{ src: 'plugin/external/external.js', condition: function() { return !!document.querySelector( '[data-external]' ); } }
+				{ src: 'plugin/external/external.js', condition: function () { return !!document.querySelector('[data-external]'); } }
 			]
+		});
+		Reveal.on('slidetransitionend', event => {
+			if (event.indexh == 13 && event.indexv == 3) {
+				document.getElementById('outro').play();
+			}
 		});
 	</script>
 </body>
