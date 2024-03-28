@@ -18,7 +18,7 @@
 <section>
     <h3>Comment on procède ?</h3>
     <ul>
-        <li>Pour chacun de ces éléments, on saisi un formulaire dans la console du fournisseur de Cloud</li>
+        <li>Pour chacun de ces éléments, on saisit un formulaire dans la console du fournisseur de Cloud</li>
         <li>Pour chaque environnement (test, production, etc.) on reproduit ces manipulations</li>
     </ul>
     <blockquote>➕ il y a d'opérations manuelles<br />➕ il y a de risques d'erreurs
@@ -76,9 +76,9 @@
     <img class="no-border" src="images/logos/ansible.png" height="100px" />
     <pre><code data-trim>- name: Download Java binaries
   get_url:
-    url: "https://download.java.net/java/GA/jdk19.0.1/afdd2e245b014143b62ccb916125e3ce/10/GPL/openjdk-19.0.1_linux-x64_bin.tar.gz"
-    dest: "/tmp/openjdk.tar.gz"
-    checksum: "7a466882c7adfa369319fe4adeb197ee5d7f79e75d641e9ef94abee1fc22b1fa"</code></pre>
+    url: "https://download.java.net/java/GA/jdk21.0.2/f2283984656d49d69e91c558476027ac/13/GPL/openjdk-21.0.2_linux-x64_bin.tar.gz"
+    dest: "/tmp/jdk.tar.gz"
+    checksum: "a2def047a73941e01a73739f92755f86b895811afb1f91243db214cff5bdac3f"</code></pre>
 </section>
 <section>
     <h3>Et si on automatisait l'automatisation ?</h3>
@@ -89,7 +89,7 @@
 <section>
     <h3>Oui, il en reste des choses à automatiser !</h3>
     <ul>
-        <li>Les commandes Terraform et Ansible exécutées la main depuis son poste...
+        <li>Les commandes Terraform et Ansible exécutées àla main depuis son poste...
         </li>
         <li>pour chacun des environnements dont on a besoin ...</li>
         <li>avec à chaque fois, la configuration à adapter au contexte...</li>
